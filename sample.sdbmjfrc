@@ -1,0 +1,8 @@
+export FUSEKI_HOME=$HOME/Java/apache-jena-fuseki-4.5.0
+export JENA_HOME=$HOME/Java/apache-jena-4.5.0
+
+PATH=$PATH:$FUSEKI_HOME
+PATH=$PATH:$FUSEKI_HOME/bin
+PATH=$PATH:$JENA_HOME/bin
+
+export PATH
