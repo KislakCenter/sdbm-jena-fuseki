@@ -1,0 +1,9 @@
+jena
+run/
+*.csv
+data/*.nq
+TDB2
+*.gz
+*.bak
+*.numbers
+run
