@@ -3,7 +3,7 @@
 Configuration, instructions, and helper script for running SDBM triples under
 Jena Fuseki using TDB2 and Fuseki2.
 
-# Install and configure Jena and Jena Fuseki
+## Install and configure Jena and Jena Fuseki
 
 Skip to the [Usage section](#usage) if you've already completed the installation and
 configuration steps.
@@ -57,36 +57,35 @@ You will need to adjust this file if Jena and Fuseki are installed at
 different locations from the one recommended here, or if you're using
 a version other than 4.5.0.
 
-## Test the setup
+### Test the setup
 
 There are two steps here:
 
 1. Load the test data into Jena
 2. Query the data using Fuseki
 
-### Load the test data into Jena
+#### Load the test data into Jena
 
 NB If you already have a folder called `TDB2`, delete it and reload the `ttl`
 file data. If you're loading the data, you must delete the `TDB2` folder to
 avoid loading the data twice.
 
 ```bash
-$ rm -rf TDB2
-# the following creates the `TDB2` folder
-$ tdb2.tdbloader --verbose --loc TDB2 test/test.ttl
+rm -rf TDB2
+the following creates the `TDB2` folder
+tdb2.tdbloader --verbose --loc TDB2 test/test.ttl
 ```
 
 Run the script `start-fuseki.sh`:
 
 ```bash
-$ ./start-fuseki.sh
+./start-fuseki.sh
 ```
 
 You should see something something like the following.
 
-```
+```shell
 [2022-07-27 16:05:54] Server     INFO  Apache Jena Fuseki 4.5.0
-[2022-07-27 16:05:54] ContextHandler WARN  BaseResource file:///Users/emeryr/Java/apache-jena-fuseki-4.5.0/webapp/ is aliased to file:///Users/emeryr/dev/Java/apache-jena-fuseki-4.5.0/webapp/ in o.e.j.w.WebAppContext@3162743f{org.apache.jena.fuseki.Servlet,/,file:///Users/emeryr/Java/apache-jena-fuseki-4.5.0/webapp/,STOPPED}. May not be supported in future releases.
 [2022-07-27 16:05:54] Config     INFO  FUSEKI_HOME=/Users/emeryr/Java/apache-jena-fuseki-4.5.0
 [2022-07-27 16:05:54] Config     INFO  FUSEKI_BASE=/Users/emeryr/code/GIT/sdbm-jena-fuseki/run
 [2022-07-27 16:05:54] Config     INFO  Shiro file: file:///Users/emeryr/code/GIT/sdbm-jena-fuseki/run/shiro.ini
@@ -102,15 +101,16 @@ You should see something something like the following.
 Go to `http://localhost:3030/`. Click on the "Query" action for the dataset,
 '/tdb2-database', and run the default query.
 
-# Usage
+Use the `Control-C` key combination to stop the server.
+
+## Usage
 
 In this project folder, create a folder called `data` if it doesn't already
 exist.
 
-
 ```bash
-$ cd path/to/sdbm-jena-fuseki
-$ mkdir data
+cd path/to/sdbm-jena-fuseki
+mkdir data
 ```
 
 From the [SDBM downloads page][sdbm-downloads], download the lasted
@@ -118,7 +118,7 @@ version of the SDBM TTL file to the `data` folder and unzip it,
 using the correct name of the TTL file.
 
 ```bash
-$ gunzip data/output-20220727T050002-UTC.ttl.gz
+gunzip data/output-20220727T050002-UTC.ttl.gz
 ```
 
 Warning: The unzipped file is very large, ~1 GB. It will take a long
@@ -130,14 +130,15 @@ it's been loaded.
 Remove the `TDB2` directory and load the data into Jena.
 
 ```bash
-$ rm -rf TDB2
+rm -rf TDB2
 # the following creates the `TDB2` folder
-$ tdb2.tdbloader --verbose --loc TDB2 data/output-20220727T050002-UTC.ttl
+tdb2.tdbloader --verbose --loc TDB2 data/output-20220727T050002-UTC.ttl
 ```
 
 Start Fuseki:
 
 ```bash
-$ ./start-fuseki.sh
+./start-fuseki.sh
 ```
 
+Use the `Control-C` key combination to stop the server.
