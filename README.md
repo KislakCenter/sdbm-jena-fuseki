@@ -26,6 +26,9 @@ Create a folder on your Linux/MacOS computer home directory called `Java`.
 $ mkdir $HOME/Java
 ```
 
+This will create a folder like `/home/<YOUR_USER>/Java` or 
+`/Users/<YOUR_USER>/Java`.
+
 Download and unzip the these files in the new `Java directory`:
 
 - <https://dlcdn.apache.org/jena/binaries/apache-jena-fuseki-4.5.0.zip>
