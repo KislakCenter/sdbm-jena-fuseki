@@ -127,11 +127,15 @@ it's been loaded.
 
 [sdbm-downloads]: https://sdbm.library.upenn.edu/downloads> "SDBM downloads page"
 
-Remove the `TDB2` directory and load the data into Jena.
+Remove the `TDB2` directory and load the data into Jena. 
+
+Note: The SDBM TTL file is very large (over 1GB), and the load will take
+several minutes.
 
 ```bash
 rm -rf TDB2
 # the following creates the `TDB2` folder
+# substute `output-20220727T050002-UTC.ttl` with the correct file name
 tdb2.tdbloader --verbose --loc TDB2 data/output-20220727T050002-UTC.ttl
 ```
 
@@ -142,3 +146,9 @@ Start Fuseki:
 ```
 
 Use the `Control-C` key combination to stop the server.
+
+### Clean up
+
+As noted above the TTL is quite large. After loader process has finished,
+be sure to zip the TTL file in the `data` folder. Don't delete it, as 
+it may be needed again.
