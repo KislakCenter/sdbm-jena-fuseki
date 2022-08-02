@@ -20,6 +20,19 @@ Note: I'm assuming the JRE will work. If it does not you may need to install the
 
 [JDK]: https://www.oracle.com/java/technologies/downloads/ "JDK downloads page"
 
+Confirm that you have Java installed by running the `java` command.
+
+```shell
+$ java --version                                                                                                                                                               ─╯
+java 11.0.2 2019-01-15 LTS
+Java(TM) SE Runtime Environment 18.9 (build 11.0.2+9-LTS)
+Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+9-LTS, mixed mode)
+```
+
+Your output will differ depending on the Java version you have install.
+If you get an error, refer to the Java website installation instructions
+for your operating system.
+
 Create a folder on your Linux/MacOS computer home directory called `Java`.
 
 ```shell
@@ -60,6 +73,9 @@ You will need to adjust this file if Jena and Fuseki are installed at
 different locations from the one recommended here, or if you're using
 a version other than 4.5.0.
 
+You can add these lines to your `$HOME/.bashrc` file or, if you're running ZSH
+(the default on MacOS) to `$HOME/.zshrc`.
+
 ### Test the setup
 
 There are two steps here:
@@ -69,7 +85,15 @@ There are two steps here:
 
 #### Load the test data into Jena
 
-NB If you already have a folder called `TDB2`, delete it and reload the `ttl`
+Make sure the `FUSEKI_HOME`, `JENA_HOME` and `PATH` values are set in your
+environment either by adding the lines in the `.sdbmjfrc` to `$HOME/.bashrc`
+or `$HOME/.zshrc`, or by sourcing the `.sdbmjfrc`:
+
+```shell
+source .sdbmjfrc
+```
+
+If you already have a folder called `TDB2`, delete it and reload the `ttl`
 file data. If you're loading the data, you must delete the `TDB2` folder to
 avoid loading the data twice.
 
@@ -128,7 +152,23 @@ Warning: The unzipped file is very large, ~1 GB. It will take a long
 time to load, and once loaded, you will probably want to re-compress it when
 it's been loaded.
 
+
 [sdbm-downloads]: https://sdbm.library.upenn.edu/downloads> "SDBM downloads page"
+
+Make sure the `FUSEKI_HOME`, `JENA_HOME` and `PATH` values are set in your
+environment either by adding the lines in the `.sdbmjfrc` to `$HOME/.bashrc`
+or `$HOME/.zshrc`, or by sourcing the `.sdbmjfrc`:
+
+```shell
+# if you've just added the lines to .bashrc
+source $HOME/.bashrc
+
+# if you've just added the lines to .zshrc
+source $HOME/.zshrc
+
+# if you've haven't already run, source .sdbmjfrc in this shell session
+source .sdbmjfrc
+```
 
 Remove the `TDB2` directory and load the data into Jena. 
 
