@@ -157,7 +157,7 @@ time to load, and once loaded, you will probably want to re-compress it when
 it's been loaded.
 
 
-[sdbm-downloads]: https://sdbm.library.upenn.edu/downloads> "SDBM downloads page"
+[sdbm-downloads]: https://sdbm.library.upenn.edu/downloads "SDBM downloads page"
 
 Make sure the `FUSEKI_HOME`, `JENA_HOME` and `PATH` values are set in your
 environment either by adding the lines in the `.sdbmjfrc` to `$HOME/.bashrc`
