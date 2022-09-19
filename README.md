@@ -23,7 +23,7 @@ Note: I'm assuming the JRE will work. If it does not you may need to install the
 Confirm that you have Java installed by running the `java` command.
 
 ```shell
-$ java --version                                                                                                                                                               ─╯
+$ java --version
 java 11.0.2 2019-01-15 LTS
 Java(TM) SE Runtime Environment 18.9 (build 11.0.2+9-LTS)
 Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+9-LTS, mixed mode)
@@ -44,8 +44,12 @@ This will create a folder like `/home/<YOUR_USER>/Java` or
 
 Download and unzip the these files in the new `Java directory`:
 
-- <https://dlcdn.apache.org/jena/binaries/apache-jena-fuseki-4.5.0.zip>
-- <https://dlcdn.apache.org/jena/binaries/apache-jena-4.5.0.zip>
+- <http://archive.apache.org/dist/jena/binaries/apache-jena-fuseki-4.5.0.zip>
+- <http://archive.apache.org/dist/jena/binaries/apache-jena-4.5.0.zip>
+
+NOTE: You can use a more recent version of Jena and Jena-Fuseki, but you'll
+need to adjust the `FUSEKI_HOME` AND `JENA_HOME` variables described below
+for your environment.
 
 ### Configure your system to use Jena 4.5
 
@@ -125,8 +129,8 @@ You should see something something like the following.
 [2022-07-27 16:05:55] Server     INFO  Started 2022/07/27 16:05:55 EDT on port 3030
 ```
 
-Go to `http://localhost:3030/`. Click on the "Query" action for the dataset,
-'/tdb2-database', and run the default query.
+Go to `http://localhost:3030/#/`. Click on the "Query" action for the dataset,
+'/sdbm', and run the default query.
 
 Use the `Control-C` key combination to stop the server.
 
@@ -189,6 +193,9 @@ Start Fuseki:
 ```
 
 Use the `Control-C` key combination to stop the server.
+
+Go to `http://localhost:3030/#/`. Click on the "Query" action for the dataset,
+'/sdbm', and run the default query.
 
 ### Clean up
 
